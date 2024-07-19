@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,6 +14,18 @@ public class BaseDbContext : DbContext
     public DbSet<RefreshToken> RefreshTokens { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+    public DbSet<Brand> Brands { get; set; }
+    public DbSet<Car> Cars { get; set; }
+    public DbSet<Color> Colors { get; set; }
+    public DbSet<CorporateCustomer> CorporateCustomers { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Fuel> Fuels { get; set; }
+    public DbSet<IndividualCustomer> IndividualCustomers { get; set; }
+    public DbSet<Invoice> Invoices { get; set; }
+    public DbSet<Model> Models { get; set; }
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Rental> Rentals { get; set; }
+    public DbSet<Transmission> Transmissions { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

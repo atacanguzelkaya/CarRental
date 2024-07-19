@@ -1,4 +1,4 @@
-﻿using Application.Services.Repositories;
+using Application.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +23,18 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
+        services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<ICarRepository, CarRepository>();
+        services.AddScoped<IColorRepository, ColorRepository>();
+        services.AddScoped<ICorporateCustomerRepository, CorporateCustomerRepository>();
+        services.AddScoped<ICustomerRepository, CustomerRepository>();
+        services.AddScoped<IFuelRepository, FuelRepository>();
+        services.AddScoped<IIndividualCustomerRepository, IndividualCustomerRepository>();
+        services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+        services.AddScoped<IModelRepository, ModelRepository>();
+        services.AddScoped<IPaymentRepository, PaymentRepository>();
+        services.AddScoped<IRentalRepository, RentalRepository>();
+        services.AddScoped<ITransmissionRepository, TransmissionRepository>();
         return services;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
@@ -20,6 +20,18 @@ using NArchitecture.Core.Mailing;
 using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
 using NArchitecture.Core.Security.JWT;
+using Application.Services.Brands;
+using Application.Services.Cars;
+using Application.Services.Colors;
+using Application.Services.CorporateCustomers;
+using Application.Services.Customers;
+using Application.Services.Fuels;
+using Application.Services.IndividualCustomers;
+using Application.Services.Invoices;
+using Application.Services.Models;
+using Application.Services.Payments;
+using Application.Services.Rentals;
+using Application.Services.Transmissions;
 
 namespace Application;
 
@@ -61,6 +73,18 @@ public static class ApplicationServiceRegistration
 
         services.AddSecurityServices<Guid, int, Guid>(tokenOptions);
 
+        services.AddScoped<IBrandService, BrandManager>();
+        services.AddScoped<ICarService, CarManager>();
+        services.AddScoped<IColorService, ColorManager>();
+        services.AddScoped<ICorporateCustomerService, CorporateCustomerManager>();
+        services.AddScoped<ICustomerService, CustomerManager>();
+        services.AddScoped<IFuelService, FuelManager>();
+        services.AddScoped<IIndividualCustomerService, IndividualCustomerManager>();
+        services.AddScoped<IInvoiceService, InvoiceManager>();
+        services.AddScoped<IModelService, ModelManager>();
+        services.AddScoped<IPaymentService, PaymentManager>();
+        services.AddScoped<IRentalService, RentalManager>();
+        services.AddScoped<ITransmissionService, TransmissionManager>();
         return services;
     }
 
