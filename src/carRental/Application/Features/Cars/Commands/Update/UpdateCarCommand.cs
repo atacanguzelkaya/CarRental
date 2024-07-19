@@ -5,6 +5,7 @@ using Domain.Entities;
 using NArchitecture.Core.Application.Pipelines.Caching;
 using NArchitecture.Core.Application.Pipelines.Logging;
 using MediatR;
+using Domain.Enums;
 
 namespace Application.Features.Cars.Commands.Update;
 
